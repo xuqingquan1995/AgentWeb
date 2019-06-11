@@ -21,10 +21,6 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebResourceError;
-import android.webkit.WebResourceRequest;
-import android.webkit.WebResourceResponse;
-import android.webkit.WebView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -51,6 +47,10 @@ import com.just.agentweb.sample.client.MiddlewareWebViewClient;
 import com.just.agentweb.sample.common.CommonWebChromeClient;
 import com.just.agentweb.sample.common.FragmentKeyDown;
 import com.just.agentweb.sample.common.UIController;
+import com.tencent.smtt.export.external.interfaces.WebResourceError;
+import com.tencent.smtt.export.external.interfaces.WebResourceRequest;
+import com.tencent.smtt.export.external.interfaces.WebResourceResponse;
+import com.tencent.smtt.sdk.WebView;
 
 import java.util.HashMap;
 
@@ -126,7 +126,7 @@ public class AgentWebFragment extends Fragment implements FragmentKeyDown {
 
 
 		// AgentWeb 没有把WebView的功能全面覆盖 ，所以某些设置 AgentWeb 没有提供 ， 请从WebView方面入手设置。
-		mAgentWeb.getWebCreator().getWebView().setOverScrollMode(WebView.OVER_SCROLL_NEVER);
+		mAgentWeb.getWebCreator().getWebView().setOverScrollMode(android.webkit.WebView.OVER_SCROLL_NEVER);
 		//mAgentWeb.getWebCreator().getWebView()  获取WebView .
 
 //		mAgentWeb.getWebCreator().getWebView().setOnLongClickListener();
@@ -237,7 +237,7 @@ public class AgentWebFragment extends Fragment implements FragmentKeyDown {
 			 * @return WebListenerManager
 			 */
 			@Override
-			public WebListenerManager setDownloader(WebView webView, android.webkit.DownloadListener downloadListener) {
+			public WebListenerManager setDownloader(WebView webView, com.tencent.smtt.sdk.DownloadListener downloadListener) {
 				return super.setDownloader(webView,
 						DefaultDownloadImpl
 								.create((Activity) webView.getContext(),

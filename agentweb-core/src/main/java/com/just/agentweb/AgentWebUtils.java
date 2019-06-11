@@ -54,10 +54,11 @@ import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
-import android.webkit.ValueCallback;
-import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
+
+import com.tencent.smtt.sdk.ValueCallback;
+import com.tencent.smtt.sdk.WebChromeClient;
+import com.tencent.smtt.sdk.WebView;
+
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -420,7 +421,7 @@ public class AgentWebUtils {
 		try {
 
 			AgentWebConfig.removeAllCookies(null);
-			webView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+			webView.getSettings().setCacheMode(android.webkit.WebSettings.LOAD_NO_CACHE);
 			context.deleteDatabase("webviewCache.db");
 			context.deleteDatabase("webview.db");
 			webView.clearCache(true);

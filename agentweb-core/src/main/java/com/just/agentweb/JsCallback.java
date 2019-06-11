@@ -19,13 +19,15 @@
 package com.just.agentweb;
 
 import android.util.Log;
-import android.webkit.WebView;
+
+import com.tencent.smtt.sdk.WebView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.ref.WeakReference;
+
 public class JsCallback {
     private static final String CALLBACK_JS_FORMAT = "javascript:%s.callback(%d, %d %s);";
     private int mIndex;

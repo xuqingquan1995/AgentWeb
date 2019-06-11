@@ -18,10 +18,10 @@ package com.just.agentweb.download;
 
 import android.app.Activity;
 import android.support.annotation.DrawableRes;
-import android.webkit.WebView;
 
 import com.download.library.DownloadTask;
 import com.just.agentweb.PermissionInterceptor;
+import com.tencent.smtt.sdk.WebView;
 
 import java.io.Serializable;
 

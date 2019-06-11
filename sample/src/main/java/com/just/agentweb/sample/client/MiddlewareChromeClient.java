@@ -1,10 +1,10 @@
 package com.just.agentweb.sample.client;
 
 import android.util.Log;
-import android.webkit.JsResult;
-import android.webkit.WebView;
 
 import com.just.agentweb.MiddlewareWebChromeBase;
+import com.tencent.smtt.export.external.interfaces.JsResult;
+import com.tencent.smtt.sdk.WebView;
 
 /**
  * Created by cenxiaozhong on 2017/12/16.

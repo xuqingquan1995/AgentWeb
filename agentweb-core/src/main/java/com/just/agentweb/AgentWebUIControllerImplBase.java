@@ -18,9 +18,10 @@ package com.just.agentweb;
 
 import android.app.Activity;
 import android.os.Handler;
-import android.webkit.JsPromptResult;
-import android.webkit.JsResult;
-import android.webkit.WebView;
+
+import com.tencent.smtt.export.external.interfaces.JsPromptResult;
+import com.tencent.smtt.export.external.interfaces.JsResult;
+import com.tencent.smtt.sdk.WebView;
 
 
 /**

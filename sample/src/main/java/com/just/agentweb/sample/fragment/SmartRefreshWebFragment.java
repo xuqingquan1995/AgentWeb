@@ -4,7 +4,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.FrameLayout;
 
 import com.just.agentweb.IWebLayout;
@@ -12,6 +11,7 @@ import com.just.agentweb.sample.widget.SmartRefreshWebLayout;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+import com.tencent.smtt.sdk.WebView;
 
 /**
  * Created by cenxiaozhong on 2017/7/1.

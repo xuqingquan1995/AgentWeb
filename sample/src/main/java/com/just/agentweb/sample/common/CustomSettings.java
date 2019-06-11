@@ -2,14 +2,14 @@ package com.just.agentweb.sample.common;
 
 import android.app.Activity;
 import android.os.Build;
-import android.webkit.DownloadListener;
-import android.webkit.WebView;
 
 import com.just.agentweb.AbsAgentWebSettings;
 import com.just.agentweb.AgentWeb;
 import com.just.agentweb.IAgentWebSettings;
 import com.just.agentweb.WebListenerManager;
 import com.just.agentweb.download.DefaultDownloadImpl;
+import com.tencent.smtt.sdk.DownloadListener;
+import com.tencent.smtt.sdk.WebView;
 
 /**
  * Created by cenxiaozhong on 2017/5/26.

@@ -2,7 +2,9 @@ package com.just.agentweb.sample.app;
 
 import android.app.Application;
 
+import com.just.agentweb.LogUtils;
 import com.squareup.leakcanary.LeakCanary;
+import com.tencent.smtt.sdk.QbSdk;
 
 /**
  * Created by cenxiaozhong on 2017/5/23.
@@ -30,6 +32,15 @@ public class App extends Application {
         }
         LeakCanary.install(this);
         // Normal app init code...
+        QbSdk.initX5Environment(this, new QbSdk.PreInitCallback() {
+            @Override
+            public void onCoreInitFinished() {
+            }
 
+            @Override
+            public void onViewInitFinished(boolean b) {
+                LogUtils.i("onViewInitFinished", "onViewInitFinished=" + b);
+            }
+        });
     }
 }

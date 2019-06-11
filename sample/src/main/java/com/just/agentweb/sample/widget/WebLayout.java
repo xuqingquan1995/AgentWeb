@@ -5,11 +5,11 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import android.webkit.WebView;
 
 import com.just.agentweb.IWebLayout;
 import com.just.agentweb.sample.R;
 import com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout;
+import com.tencent.smtt.sdk.WebView;
 
 /**
  * Created by cenxiaozhong on 2017/7/1.

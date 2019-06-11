@@ -3,9 +3,9 @@ package com.just.agentweb.sample.common;
 import android.app.Activity;
 import android.os.Handler;
 import android.util.Log;
-import android.webkit.WebView;
 
 import com.just.agentweb.AgentWebUIControllerImplBase;
+import com.tencent.smtt.sdk.WebView;
 
 /**
  * Created by cenxiaozhong on 2017/12/23.

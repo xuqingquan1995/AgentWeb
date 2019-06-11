@@ -1,9 +1,9 @@
 package com.just.agentweb.sample.common;
 
 import android.util.Log;
-import android.webkit.WebView;
 
 import com.just.agentweb.WebChromeClient;
+import com.tencent.smtt.sdk.WebView;
 
 /**
  * @author cenxiaozhong

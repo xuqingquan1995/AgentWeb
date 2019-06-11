@@ -19,12 +19,13 @@ import com.just.agentweb.AgentWebConfig;
 import com.just.agentweb.sample.R;
 import com.just.agentweb.sample.common.GuideItemEntity;
 
-import static com.just.agentweb.sample.sonic.SonicJavaScriptInterface.PARAM_CLICK_TIME;
-
 /**
  * source code  https://github.com/Justson/AgentWeb
  */
 public class MainActivity extends AppCompatActivity {
+    public static final String PARAM_CLICK_TIME = "clickTime";
+
+    public static final String PARAM_LOAD_URL_TIME = "loadUrlTime";
 
 
     private ListView mListView;
@@ -64,14 +65,11 @@ public class MainActivity extends AppCompatActivity {
             new GuideItemEntity("自定义进度条", FLAG_GUIDE_DICTIONARY_CUSTOM_PROGRESSBAR),
             new GuideItemEntity("自定义设置", FLAG_GUIDE_DICTIONARY_CUSTOM_WEBVIEW_SETTINGS),
             new GuideItemEntity("电话 ， 信息 ， 邮件", FLAG_GUIDE_DICTIONARY_LINKS),
-            new GuideItemEntity("自定义 WebView", FLAG_GUIDE_DICTIONARY_CUTSTOM_WEBVIEW),
             new GuideItemEntity("下拉回弹效果", FLAG_GUIDE_DICTIONARY_BOUNCE_EFFACT),
-            new GuideItemEntity("Jsbridge 例子", FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE),
             new GuideItemEntity("继承 BaseAgentWebActivity", FLAG_GUIDE_DICTIONARY_EXTENDS_BASE_ACT),
             new GuideItemEntity("继承 BaseAgentWebFragment", FLAG_GUIDE_DICTIONARY_EXTENDS_BASE_FRAG),
             new GuideItemEntity("SmartRefresh 下拉刷新", FLAG_GUIDE_DICTIONARY_PULL_DOWN_REFRESH),
             new GuideItemEntity("地图", FLAG_GUIDE_DICTIONARY_MAP),
-            new GuideItemEntity("VasSonic 首屏秒开", FLAG_GUIDE_DICTIONARY_VASSONIC_SAMPLE),
             new GuideItemEntity("与ToolBar联动", FLAG_GUIDE_DICTIONARY_LINKAGE_WITH_TOOLBAR),
             new GuideItemEntity("原生文件下载", FLAG_GUIDE_DICTIONARY_COMMON_FILE_DOWNLOAD),
     };
@@ -177,10 +175,6 @@ public class MainActivity extends AppCompatActivity {
             case FLAG_GUIDE_DICTIONARY_BOUNCE_EFFACT:
                 startActivity(new Intent(this, CommonActivity.class)
                         .putExtra(CommonActivity.TYPE_KEY, FLAG_GUIDE_DICTIONARY_BOUNCE_EFFACT));
-                break;
-            case FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE:
-                startActivity(new Intent(this, CommonActivity.class)
-                        .putExtra(CommonActivity.TYPE_KEY, FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE));
                 break;
             case FLAG_GUIDE_DICTIONARY_EXTENDS_BASE_ACT:
                 startActivity(new Intent(this, EasyWebActivity.class));

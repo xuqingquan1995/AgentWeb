@@ -15,16 +15,12 @@ import com.just.agentweb.sample.fragment.AgentWebFragment;
 import com.just.agentweb.sample.fragment.BounceWebFragment;
 import com.just.agentweb.sample.fragment.CustomIndicatorFragment;
 import com.just.agentweb.sample.fragment.CustomSettingsFragment;
-import com.just.agentweb.sample.fragment.CustomWebViewFragment;
 import com.just.agentweb.sample.fragment.JsAgentWebFragment;
-import com.just.agentweb.sample.fragment.JsbridgeWebFragment;
 import com.just.agentweb.sample.fragment.SmartRefreshWebFragment;
-import com.just.agentweb.sample.fragment.VasSonicFragment;
 
 import static com.just.agentweb.sample.activity.MainActivity.FLAG_GUIDE_DICTIONARY_BOUNCE_EFFACT;
 import static com.just.agentweb.sample.activity.MainActivity.FLAG_GUIDE_DICTIONARY_CUSTOM_PROGRESSBAR;
 import static com.just.agentweb.sample.activity.MainActivity.FLAG_GUIDE_DICTIONARY_CUSTOM_WEBVIEW_SETTINGS;
-import static com.just.agentweb.sample.activity.MainActivity.FLAG_GUIDE_DICTIONARY_CUTSTOM_WEBVIEW;
 import static com.just.agentweb.sample.activity.MainActivity.FLAG_GUIDE_DICTIONARY_FILE_DOWNLOAD;
 import static com.just.agentweb.sample.activity.MainActivity.FLAG_GUIDE_DICTIONARY_INPUT_TAG_PROBLEM;
 import static com.just.agentweb.sample.activity.MainActivity.FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE;
@@ -34,9 +30,7 @@ import static com.just.agentweb.sample.activity.MainActivity.FLAG_GUIDE_DICTIONA
 import static com.just.agentweb.sample.activity.MainActivity.FLAG_GUIDE_DICTIONARY_MAP;
 import static com.just.agentweb.sample.activity.MainActivity.FLAG_GUIDE_DICTIONARY_PULL_DOWN_REFRESH;
 import static com.just.agentweb.sample.activity.MainActivity.FLAG_GUIDE_DICTIONARY_USE_IN_FRAGMENT;
-import static com.just.agentweb.sample.activity.MainActivity.FLAG_GUIDE_DICTIONARY_VASSONIC_SAMPLE;
 import static com.just.agentweb.sample.activity.MainActivity.FLAG_GUIDE_DICTIONARY_VIDEO_FULL_SCREEN;
-import static com.just.agentweb.sample.sonic.SonicJavaScriptInterface.PARAM_CLICK_TIME;
 
 /**
  * Created by cenxiaozhong on 2017/5/23.
@@ -121,23 +115,11 @@ public class CommonActivity extends AppCompatActivity {
 				ft.add(R.id.container_framelayout, mAgentWebFragment = AgentWebFragment.getInstance(mBundle = new Bundle()), AgentWebFragment.class.getName());
 				mBundle.putString(AgentWebFragment.URL_KEY, "file:///android_asset/sms/sms.html");
 				break;
-            /* 自定义 WebView */
-			case FLAG_GUIDE_DICTIONARY_CUTSTOM_WEBVIEW:
-				ft.add(R.id.container_framelayout, mAgentWebFragment = CustomWebViewFragment.getInstance(mBundle = new Bundle()), CustomWebViewFragment.class.getName());
-				mBundle.putString(AgentWebFragment.URL_KEY, "");
-				break;
             /*回弹效果*/
 			case FLAG_GUIDE_DICTIONARY_BOUNCE_EFFACT:
 				ft.add(R.id.container_framelayout, mAgentWebFragment = BounceWebFragment.getInstance(mBundle = new Bundle()), BounceWebFragment.class.getName());
 				mBundle.putString(AgentWebFragment.URL_KEY, "http://m.mogujie.com/?f=mgjlm&ptp=_qd._cps______3069826.152.1.0");
 				break;
-
-            /*JsBridge 演示*/
-			case FLAG_GUIDE_DICTIONARY_JSBRIDGE_SAMPLE:
-				ft.add(R.id.container_framelayout, mAgentWebFragment = JsbridgeWebFragment.getInstance(mBundle = new Bundle()), JsbridgeWebFragment.class.getName());
-				mBundle.putString(AgentWebFragment.URL_KEY, "file:///android_asset/jsbridge/demo.html");
-				break;
-
             /*SmartRefresh 下拉刷新*/
 			case FLAG_GUIDE_DICTIONARY_PULL_DOWN_REFRESH:
 				ft.add(R.id.container_framelayout, mAgentWebFragment = SmartRefreshWebFragment.getInstance(mBundle = new Bundle()), SmartRefreshWebFragment.class.getName());
@@ -147,12 +129,6 @@ public class CommonActivity extends AppCompatActivity {
 			case FLAG_GUIDE_DICTIONARY_MAP:
 				ft.add(R.id.container_framelayout, mAgentWebFragment = AgentWebFragment.getInstance(mBundle = new Bundle()), AgentWebFragment.class.getName());
 				mBundle.putString(AgentWebFragment.URL_KEY, "https://map.baidu.com/mobile/webapp/index/index/#index/index/foo=bar/vt=map");
-				break;
-                /*首屏秒开*/
-			case FLAG_GUIDE_DICTIONARY_VASSONIC_SAMPLE:
-				ft.add(R.id.container_framelayout, mAgentWebFragment = VasSonicFragment.create(mBundle = new Bundle()), AgentWebFragment.class.getName());
-				mBundle.putLong(PARAM_CLICK_TIME, getIntent().getLongExtra(PARAM_CLICK_TIME, -1L));
-				mBundle.putString(AgentWebFragment.URL_KEY, "http://mc.vip.qq.com/demo/indexv3");
 				break;
 			default:
 				break;

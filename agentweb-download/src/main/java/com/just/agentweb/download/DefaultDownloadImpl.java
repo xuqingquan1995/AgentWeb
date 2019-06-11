@@ -29,7 +29,6 @@ import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
-import android.webkit.WebView;
 
 import com.download.library.DownloadImpl;
 import com.download.library.DownloadListenerAdapter;
@@ -43,6 +42,8 @@ import com.just.agentweb.AgentWebPermissions;
 import com.just.agentweb.AgentWebUtils;
 import com.just.agentweb.LogUtils;
 import com.just.agentweb.PermissionInterceptor;
+import com.tencent.smtt.sdk.WebView;
+import com.tencent.smtt.sdk.DownloadListener;
 
 import java.io.File;
 import java.lang.ref.WeakReference;
@@ -55,7 +56,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @author cenxiaozhong
  * @date 2017/5/13
  */
-public class DefaultDownloadImpl implements android.webkit.DownloadListener {
+public class DefaultDownloadImpl implements DownloadListener {
 	/**
 	 * Application Context
 	 */

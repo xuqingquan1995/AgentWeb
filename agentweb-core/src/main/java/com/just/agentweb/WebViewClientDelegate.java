@@ -17,21 +17,22 @@
 package com.just.agentweb;
 
 import android.graphics.Bitmap;
-import android.net.http.SslError;
 import android.os.Message;
 import android.view.KeyEvent;
-import android.webkit.ClientCertRequest;
-import android.webkit.HttpAuthHandler;
-import android.webkit.SslErrorHandler;
-import android.webkit.WebResourceError;
-import android.webkit.WebResourceRequest;
-import android.webkit.WebResourceResponse;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+
+import com.tencent.smtt.export.external.interfaces.ClientCertRequest;
+import com.tencent.smtt.export.external.interfaces.HttpAuthHandler;
+import com.tencent.smtt.export.external.interfaces.SslError;
+import com.tencent.smtt.export.external.interfaces.SslErrorHandler;
+import com.tencent.smtt.export.external.interfaces.WebResourceError;
+import com.tencent.smtt.export.external.interfaces.WebResourceRequest;
+import com.tencent.smtt.export.external.interfaces.WebResourceResponse;
+import com.tencent.smtt.sdk.WebView;
+import com.tencent.smtt.sdk.WebViewClient;
 
 /**
- * @update WrapperWebViewClient rename WebViewClientDelegate
  * @author cenxiaozhong
+ * @update WrapperWebViewClient rename WebViewClientDelegate
  * @date 2017/5/28
  */
 public class WebViewClientDelegate extends WebViewClient {
@@ -93,15 +94,6 @@ public class WebViewClientDelegate extends WebViewClient {
             return;
         }
         super.onLoadResource(view, url);
-    }
-
-    @Override
-    public void onPageCommitVisible(WebView view, String url) {
-        if (mDelegate != null) {
-            mDelegate.onPageCommitVisible(view, url);
-            return;
-        }
-        super.onPageCommitVisible(view, url);
     }
 
     @Override

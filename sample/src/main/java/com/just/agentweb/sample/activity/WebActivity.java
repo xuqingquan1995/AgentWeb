@@ -10,7 +10,7 @@ public class WebActivity extends BaseWebActivity {
 
     @Override
     public String getUrl() {
-        return super.getUrl();
+        return "http://debugtbs.qq.com";
     }
 
     @Override

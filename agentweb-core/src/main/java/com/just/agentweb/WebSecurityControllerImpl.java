@@ -18,7 +18,8 @@ package com.just.agentweb;
 
 import android.os.Build;
 import android.support.v4.util.ArrayMap;
-import android.webkit.WebView;
+
+import com.tencent.smtt.sdk.WebView;
 
 
 /**

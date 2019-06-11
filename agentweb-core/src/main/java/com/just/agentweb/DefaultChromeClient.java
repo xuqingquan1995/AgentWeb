@@ -26,14 +26,16 @@ import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
 import android.view.View;
-import android.webkit.ConsoleMessage;
-import android.webkit.GeolocationPermissions;
-import android.webkit.JsPromptResult;
-import android.webkit.JsResult;
-import android.webkit.ValueCallback;
-import android.webkit.WebChromeClient;
-import android.webkit.WebStorage;
-import android.webkit.WebView;
+
+import com.tencent.smtt.export.external.interfaces.ConsoleMessage;
+import com.tencent.smtt.export.external.interfaces.GeolocationPermissionsCallback;
+import com.tencent.smtt.export.external.interfaces.IX5WebChromeClient;
+import com.tencent.smtt.export.external.interfaces.JsPromptResult;
+import com.tencent.smtt.export.external.interfaces.JsResult;
+import com.tencent.smtt.sdk.ValueCallback;
+import com.tencent.smtt.sdk.WebChromeClient;
+import com.tencent.smtt.sdk.WebStorage;
+import com.tencent.smtt.sdk.WebView;
 
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
@@ -58,7 +60,7 @@ public class DefaultChromeClient extends MiddlewareWebChromeBase {
 	/**
 	 * Android WebChromeClient path ，用于反射，用户是否重写来该方法
 	 */
-	public static final String ANDROID_WEBCHROMECLIENT_PATH = "android.webkit.WebChromeClient";
+	public static final String ANDROID_WEBCHROMECLIENT_PATH = "com.tencent.smtt.sdk.WebChromeClient";
 	/**
 	 * WebChromeClient
 	 */
@@ -86,7 +88,7 @@ public class DefaultChromeClient extends MiddlewareWebChromeBase {
 	/**
 	 * Web 端触发的定位 Callback 回调成功，或者失败
 	 */
-	private GeolocationPermissions.Callback mCallback = null;
+	private GeolocationPermissionsCallback mCallback = null;
 	/**
 	 * 标志位
 	 */
@@ -162,11 +164,11 @@ public class DefaultChromeClient extends MiddlewareWebChromeBase {
 
 	//location
 	@Override
-	public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {
+	public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissionsCallback callback) {
 		onGeolocationPermissionsShowPromptInternal(origin, callback);
 	}
 
-	private void onGeolocationPermissionsShowPromptInternal(String origin, GeolocationPermissions.Callback callback) {
+	private void onGeolocationPermissionsShowPromptInternal(String origin, GeolocationPermissionsCallback callback) {
 		if (mPermissionInterceptor != null) {
 			if (mPermissionInterceptor.intercept(this.mWebView.getUrl(), AgentWebPermissions.LOCATION, "location")) {
 				callback.invoke(origin, false, false);
@@ -329,7 +331,7 @@ public class DefaultChromeClient extends MiddlewareWebChromeBase {
 	}
 
 	@Override
-	public void onShowCustomView(View view, CustomViewCallback callback) {
+	public void onShowCustomView(View view, IX5WebChromeClient.CustomViewCallback callback) {
 		if (mIVideo != null) {
 			mIVideo.onShowCustomView(view, callback);
 		}

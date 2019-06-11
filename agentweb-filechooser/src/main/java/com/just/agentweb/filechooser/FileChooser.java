@@ -29,9 +29,6 @@ import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Base64;
-import android.webkit.ValueCallback;
-import android.webkit.WebChromeClient;
-import android.webkit.WebView;
 
 import com.just.agentweb.AbsAgentWebUIController;
 import com.just.agentweb.Action;
@@ -41,6 +38,9 @@ import com.just.agentweb.AgentWebPermissions;
 import com.just.agentweb.AgentWebUtils;
 import com.just.agentweb.LogUtils;
 import com.just.agentweb.PermissionInterceptor;
+import com.tencent.smtt.sdk.ValueCallback;
+import com.tencent.smtt.sdk.WebChromeClient;
+import com.tencent.smtt.sdk.WebView;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

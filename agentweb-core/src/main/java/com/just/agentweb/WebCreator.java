@@ -16,8 +16,10 @@
 
 package com.just.agentweb;
 
-import android.webkit.WebView;
 import android.widget.FrameLayout;
+
+import com.tencent.smtt.sdk.WebView;
+
 /**
  * @author cenxiaozhong
  * @since 1.0.0
